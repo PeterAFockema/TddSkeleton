@@ -7,13 +7,14 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class ClassForListTest {
     @Test
     public void testEmptyListIsThereWhenClassIsInitialised() {
         List<Integer> testList = new ArrayList<Integer>();
-        Assert.assertThat(new ClassForList().ourList(), equalTo(testList));
+        assertThat(new ClassForList().ourList(), equalTo(testList));
     }
     @Test
     public void testAddingThingsToList() {
@@ -21,14 +22,23 @@ public class ClassForListTest {
         testList.add(1);
         ClassForList assertList = new ClassForList();
         assertList.add(1);
-        Assert.assertThat(assertList.ourList(), equalTo(testList));
+        assertThat(assertList.ourList(), equalTo(testList));
     }
 
     @Test
     public void testRetrievingValueFromList() {
         ClassForList classForList = new ClassForList();
         classForList.add(1);
-        Assert.assertThat(classForList.getLastValue(), equalTo(Integer.valueOf(1)));
+        assertThat(classForList.getLastValue(), equalTo(Integer.valueOf(1)));
+    }
+
+    @Test
+    public void testMostRecentItemIsFirstInList() {
+        ClassForList classForList = new ClassForList();
+        classForList.add(3);
+        classForList.add(5);
+        classForList.add(4);
+        assertThat(classForList.ourList().get(0), equalTo(Integer.valueOf(4)));
     }
 }
 

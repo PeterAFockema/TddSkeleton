@@ -17,4 +17,8 @@ public class ClassForList {
     public void add(int i) {
         listToReturn.add(Integer.valueOf(i));
     }
+
+    public Integer getLastValue() {
+        return listToReturn.get(listToReturn.size()-1);
+    }
 }

@@ -22,7 +22,13 @@ public class ClassForListTest {
         ClassForList assertList = new ClassForList();
         assertList.add(1);
         Assert.assertThat(assertList.ourList(), equalTo(testList));
+    }
 
+    @Test
+    public void testRetrievingValueFromList() {
+        ClassForList classForList = new ClassForList();
+        classForList.add(1);
+        Assert.assertThat(classForList.getLastValue(), equalTo(Integer.valueOf(1)));
     }
 }
 

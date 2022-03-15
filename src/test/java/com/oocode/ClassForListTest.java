@@ -16,12 +16,22 @@ public class ClassForListTest {
         List<Integer> testList = new ArrayList<Integer>();
         assertThat(new ClassForList().ourList(), equalTo(testList));
     }
+
     @Test
-    public void testAddingThingsToList() {
+    public void testAddingIntThingsToList() {
         List<Integer> testList = new ArrayList<Integer>();
         testList.add(1);
         ClassForList assertList = new ClassForList();
         assertList.add(1);
+        assertThat(assertList.ourList(), equalTo(testList));
+    }
+
+    @Test
+    public void testAddingIntegerThingsToList() {
+        List<Integer> testList = new ArrayList<Integer>();
+        testList.add(Integer.valueOf(1));
+        ClassForList assertList = new ClassForList();
+        assertList.add(Integer.valueOf(1));
         assertThat(assertList.ourList(), equalTo(testList));
     }
 

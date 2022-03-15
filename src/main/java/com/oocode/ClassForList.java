@@ -3,9 +3,18 @@ package com.oocode;
 import java.util.*;
 
 public class ClassForList {
-    public List<Integer> ourList() {
-        return new ArrayList<>()
 
-        ;
+    private List<Integer> listToReturn;
+
+    public ClassForList() {
+        listToReturn = new ArrayList<>();
+    }
+
+    public List<Integer> ourList() {
+        return listToReturn;
+    }
+
+    public void add(int i) {
+        listToReturn.add(Integer.valueOf(i));
     }
 }

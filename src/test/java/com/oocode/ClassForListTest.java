@@ -15,6 +15,15 @@ public class ClassForListTest {
         List<Integer> testList = new ArrayList<Integer>();
         Assert.assertThat(new ClassForList().ourList(), equalTo(testList));
     }
+    @Test
+    public void testAddingThingsToList() {
+        List<Integer> testList = new ArrayList<Integer>();
+        testList.add(1);
+        ClassForList assertList = new ClassForList();
+        assertList.add(1);
+        Assert.assertThat(assertList.ourList(), equalTo(testList));
+
+    }
 }
 
 

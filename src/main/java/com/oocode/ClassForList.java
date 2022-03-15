@@ -15,7 +15,9 @@ public class ClassForList {
     }
 
     public void add(int i) {
-        listToReturn.add(0, Integer.valueOf(i));
+        if (!listToReturn.contains(i)) {
+            listToReturn.add(0, Integer.valueOf(i));
+        }
     }
 
     public Integer getLastValue() {

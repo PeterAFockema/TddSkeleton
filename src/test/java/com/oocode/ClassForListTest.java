@@ -40,6 +40,19 @@ public class ClassForListTest {
         classForList.add(4);
         assertThat(classForList.ourList().get(0), equalTo(Integer.valueOf(4)));
     }
+
+    @Test
+    public void testDuplicatesAreRemovedFromList() {
+        ClassForList classForList = new ClassForList();
+        classForList.add(3);
+        classForList.add(3);
+        classForList.add(4);
+
+        List<Integer> testList = new ArrayList<Integer>();
+        testList.add(4);
+        testList.add(3);
+        assertThat(classForList.ourList(), equalTo(testList));
+    }
 }
 
 
